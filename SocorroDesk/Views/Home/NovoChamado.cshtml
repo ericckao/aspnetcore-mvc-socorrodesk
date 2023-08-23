@@ -1,0 +1,80 @@
+﻿@model Chamado;
+
+@{
+    ViewData["Title"] = "Novo Chamado";
+}
+
+<div class="container">
+    <div class="container bg-dark text-light px-3 px-md-5 py-5 rounded-5 col-12 col-xxl-6 my-4">
+
+        <div>
+            <h2 class="text-center"> Abertura de chamado </h2>
+        </div>
+
+        <form method="post" asp-controller="Home" asp-action="NovoChamado">
+            <!-- Nome e Chapa -->
+            <div class="d-flex my-3">
+                <div class="form-group w-50 me-3">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="name" value="Erik Fernandes" readonly>
+                </div>
+                <div class="form-group w-50">
+                    <label for="chapa">Chapa/Matrícula</label>
+                    <input type="text" class="form-control" id="chapa" value="00038976" readonly>
+                </div>
+            </div>
+
+            <!-- E-mail e telefone -->
+            <div class="d-flex">
+                <div class="form-group w-50 me-3">
+                    <label for="name">E-mail</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="email" value="erikfernandes@coyote.com" readonly>
+                </div>
+                <div class="form-group w-50">
+                    <label for="chapa">Telefone</label>
+                    <input type="number" class="form-control" id="telefone" value=11912345678 readonly>
+                </div>
+            </div>
+
+            <!-- Departamento -->
+            <div class="form-group my-3">
+                <label for="name">Departamento</label>
+                <input type="text" class="form-control" id="departamento" aria-describedby="email" value="Gestão Imobiliária" readonly>
+            </div>
+
+            <!-- Assunto -->
+            <div class="form-group my-3 d-flex flex-column">
+                <label for="assunto">Assunto:</label>
+                <select class="p-2" id="assunto" name="assunto">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Conexão de rede">Conexão de rede</option>
+                    <option value="Mapeamento de pastas">Mapeamento de pastas</option>
+                    <option value="Máquina com Lentidão">Máquina com Lentidão</option>
+                    <option value="Problemas com impressoras">Problemas com impressoras</option>
+                    <option value="Problemas com Login e Senha">Problemas com Login e Senha</option>
+                    <option value="Problemas com o sistema operacional">Problemas com o sistema operacional</option>
+                    <option value="Requisição de novos equipamentos">Requisição de novos equipamentos</option>
+                    <option value="Suporte de Hardware">Suporte de Hardware</option>
+                    <option value="Outros">Outros</option>
+
+                </select>
+
+             <!-- Observações -->
+                <div class="form-group my-3">
+                    <label for="exampleFormControlTextarea1">Observações</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+
+                <!-- Botão -->
+                <div class="d-flex gap-5 mt-3">
+                    <button type="submit" class="btn btn-success w-50">Concluir</button>
+                    <!-- Navegação para retornar a anterior-->
+                    <a type="button" class="btn btn-primary w-50" asp-controller="Home" asp-action="Index">Voltar</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+   </div>
+</div>
