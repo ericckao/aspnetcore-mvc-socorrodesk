@@ -28,11 +28,19 @@ namespace SocorroDesk.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Acessar()
-        {
 
-            return View();
+        //GetById
+        [HttpGet]
+        public IActionResult Acessar(int id)
+        {
+            var chamado = _repository.GetById(id);
+
+            if(chamado == null || chamado.Id == 0)
+            {
+                return NotFound();
+            }
+
+            return View(chamado);
         }
 
 

@@ -5,24 +5,24 @@
 }
 
 <div class="container">
-    <div class="container bg-dark text-light px-5 py-4 rounded-5 w-50 my-4">
+    <div class="container bg-dark text-light px-3 px-md-5 py-4 rounded-5 col-12 col-xxl-6 my-4">
 
         <div class="d-flex justify-content-end">
             <a type="button" class="btn btn-primary w-25" asp-controller="Home" asp-action="Index">Voltar</a>
         </div>
 
-        <div class="mt-4"> 
-            <h2 class="text-center"> Chamado Nº </h2>
+        <div>
+            <h2 class="text-center">Chamado</h2>
         </div>
 
         <form method="post" asp-controller="Home" asp-action="NovoChamado">
-            <!-- Nome e Chapa -->
+            <!-- Email e Chapa -->
             <div class="d-flex my-3">
-                <div class="form-group w-75 me-3">
+                <div class="form-group w-50 me-3">
                     <label for="name">E-mail</label>
                     <input type="email" class="form-control" id="email" aria-describedby="email" value="erikfernandes@coyote.com" readonly>
                 </div>
-                <div class="form-group w-25">
+                <div class="form-group w-50">
                     <label for="chapa">Chapa/Matrícula</label>
                     <input type="text" class="form-control" id="chapa" value="00038976" readonly>
                 </div>
@@ -30,31 +30,31 @@
 
             <!-- DataAbertura e Assunto -->
             <div class="d-flex my-3">
-                <div class="form-group w-25 me-3">
+                <div class="form-group w-50 me-3">
                     <label for="chapa">Data Abertura</label>
-                    <input type="text" class="form-control" id="dataAbertura">
+                    <input type="text" class="form-control" id="dataAbertura" asp-for="DataAbertura" value="@Model.DataAbertura.ToShortDateString()" readonly>
                 </div>
-                <div class="form-group w-75">
+                <div class="form-group w-50">
                     <label for="assunto">Assunto:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Assunto" readonly>
                 </div>
             </div>
 
-            <!-- STTATUS -->
+            <!-- STATUS -->
             <div class="d-flex my-3">
                 <div class="form-group w-100">
                     <label for="assunto">Status:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Status" readonly>
                 </div>
             </div>
 
             <!-- Ultima Atualização e Analista -->
             <div class="d-flex my-3">
-                <div class="form-group w-25 me-3">
+                <div class="form-group w-50 me-3">
                     <label for="chapa">Prazo</label>
-                    <input type="text" class="form-control" id="ultimaAtualizacao">
+                    <input type="text" class="form-control" id="Prazo" asp-for="DataAbertura" value="@Model.DataAbertura.ToShortDateString()" readonly>
                 </div>
-                <div class="form-group w-75">
+                <div class="form-group w-50">
                     <label for="assunto">Analista Responsável:</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" value="Gabriela de Jesus" readonly>
                 </div>
@@ -69,7 +69,7 @@
              <!-- Observações -->
                 <div class="form-group my-3">
                     <label for="exampleFormControlTextarea1">Observações</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" readonly></textarea>
                 </div>
 
 
@@ -83,4 +83,3 @@
         </form>
     </div>
    </div>
-</div>
